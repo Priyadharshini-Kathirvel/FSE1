@@ -1,0 +1,17 @@
+{
+	"ulid": "01GPK7XEQWRTBAS7AEQHDGN2WY",
+	"minTime": 1673524800000,
+	"maxTime": 1673532000000,
+	"stats": {
+		"numSamples": 7200,
+		"numSeries": 5,
+		"numChunks": 60
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GPK7XEQWRTBAS7AEQHDGN2WY"
+		]
+	},
+	"version": 1
+}

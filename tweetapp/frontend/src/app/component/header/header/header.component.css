@@ -1,0 +1,10 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar{
+    font-weight: bolder;
+    color: white;
+    background-color:transparent
+}
+

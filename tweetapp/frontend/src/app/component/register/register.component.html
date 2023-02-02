@@ -1,0 +1,76 @@
+<div class="container">
+    <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+        <mat-card class="form-card-1">
+            <mat-card-header>
+                <mat-card-title>Registration Page</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>account_box</mat-icon>
+                        <mat-label>Enter Firstname</mat-label>
+                        <input matInput formControlName="firstname">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>account_box</mat-icon>
+                        <mat-label>Enter Lastname</mat-label>
+                        <input matInput formControlName="lastname">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-label>Choose Gender</mat-label>
+                    <mat-radio-group formControlName="gender">
+                        <mat-radio-button value="male">Male</mat-radio-button>
+                        <mat-radio-button value="female">Female</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose Date of Birth</mat-label>
+                        <input matInput formControlName="dateOfBirth" [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <mat-label>Enter Email Id</mat-label>
+                        <input matInput formControlName="email">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>lock</mat-icon>
+                        <mat-label>Enter Password</mat-label>
+                        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)='hide=!hide'>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>lock</mat-icon>
+                        <mat-label>Enter Confirm Password</mat-label>
+                        <input matInput formControlName="confirmPassword" [type]="hide ? 'password' : 'text'">
+                        <mat-icon matSuffix (click)='hide=!hide'>{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>phone</mat-icon>
+                        <mat-label>Enter Phone Number</mat-label>
+                        <input matInput formControlName="mobileNumber">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary">Register</button>
+                    </mat-card-actions>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

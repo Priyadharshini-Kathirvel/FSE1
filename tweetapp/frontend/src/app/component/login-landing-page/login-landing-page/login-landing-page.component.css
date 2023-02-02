@@ -1,0 +1,14 @@
+.display-card{
+    color: black;
+    margin-right: 10px;
+    margin-top: 5px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+}
+
+mat-icon {
+    transform: scale(1.2);
+}
+
+.red-icon{
+    color: red;
+}

@@ -1,0 +1,7 @@
+<mat-toolbar class="toolbar">
+    <span routerLink="/home"><h1>Tweet App</h1></span>
+    <span class="spacer"></span>
+    <a mat-button routerLink="/register" *ngIf="!isLoggedIn"><mat-icon>email</mat-icon><h1>Register</h1></a>
+    <a mat-button routerLink="/login"  *ngIf="!isLoggedIn"><mat-icon>login</mat-icon><h1>Login</h1></a>
+    <a mat-button (click)="onLogout()" *ngIf="isLoggedIn"><mat-icon>logout</mat-icon><h1>Logout</h1></a>
+</mat-toolbar>

@@ -1,0 +1,24 @@
+<div class="container">
+    <form [formGroup]="replyToTweetForm" (ngSubmit)="onReplyToTweet()">
+        <mat-card class="form-card-2"> 
+            <mat-card-header>
+                <mat-card-title>Reply To Tweet</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-icon matPrefix>short_text</mat-icon>
+                        <mat-label>Enter Reply Content</mat-label>
+                        <input matInput formControlName="replyContent">
+                        <mat-error></mat-error>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <div>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Reply</button>
+                </mat-card-actions>
+            </div>
+        </mat-card>
+    </form>
+</div>

@@ -1,0 +1,10 @@
+.home{
+    text-align: center;
+    height: 65%;   
+    justify-content: center;
+    vertical-align:middle; 
+    margin-left:auto;
+    margin-right:auto;
+    background: transparent;
+    color: white;
+}

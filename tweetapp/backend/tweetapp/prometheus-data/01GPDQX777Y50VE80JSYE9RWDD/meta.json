@@ -1,0 +1,17 @@
+{
+	"ulid": "01GPDQX777Y50VE80JSYE9RWDD",
+	"minTime": 1673337600000,
+	"maxTime": 1673344800000,
+	"stats": {
+		"numSamples": 147019,
+		"numSeries": 270,
+		"numChunks": 1280
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GPDQX777Y50VE80JSYE9RWDD"
+		]
+	},
+	"version": 1
+}

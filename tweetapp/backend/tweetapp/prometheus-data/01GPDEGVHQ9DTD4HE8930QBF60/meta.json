@@ -1,0 +1,17 @@
+{
+	"ulid": "01GPDEGVHQ9DTD4HE8930QBF60",
+	"minTime": 1673330400000,
+	"maxTime": 1673337600000,
+	"stats": {
+		"numSamples": 147049,
+		"numSeries": 294,
+		"numChunks": 1116
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01GPDEGVHQ9DTD4HE8930QBF60"
+		]
+	},
+	"version": 1
+}

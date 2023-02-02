@@ -1,0 +1,111 @@
+<div class="container">
+    <mat-card class="data-card">
+        <mat-card-content>
+            <mat-tab-group>
+                <mat-tab label="Tweets">
+                    <div class="container">
+                        <mat-card class="display-card" *ngFor="let tweet of tweets">
+                            <mat-card-content>
+                                <h6>{{tweet.user.firstname}} {{tweet.user.lastname}}</h6>
+                                <p>{{tweet.tweetContent}}</p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <p *ngIf="likeCount">{{likeCount}}</p>
+                                <a mat-button class="red-icon" routerLink="/likeTweet" (click)="onLikeTweet(tweet.tweetId)"><mat-icon>favorite</mat-icon></a>
+                                <a mat-button routerLink="/replyToTweet" (click)="onReplyToTweet(tweet.tweetId)"><mat-icon>comment</mat-icon></a>
+                                <a mat-button routerLink="/updateTweet" *ngIf="loggedInUser === tweet.user.email" (click)="onUpdateTweet(tweet.tweetId)"><mat-icon>edit</mat-icon></a>
+                                <a mat-button class="red-icon" routerLink="/deleteTweet" *ngIf="loggedInUser === tweet.user.email" (click)="onDeleteTweet(tweet.tweetId)"><mat-icon>delete</mat-icon></a>
+                            </mat-card-actions>
+                          </mat-card>
+                          <div>
+                            <mat-card>
+                                <mat-card-actions>
+                                    <button mat-raised-button color="primary" routerLink="/addTweet">Add Tweet</button>
+                                </mat-card-actions>
+                            </mat-card>
+                          </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Search Tweet">
+                    <div class="container">
+                        <form [formGroup]="getTweetByUsernameForm" (ngSubmit)="onGetTweetsByUsername()">
+                            <mat-card class="form-card-1 ">
+                                <mat-card-header>
+                                    <mat-card-title>Search Tweet By Username</mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <div>
+                                        <mat-form-field appearance="fill">
+                                            <mat-icon matPrefix>search</mat-icon>
+                                            <mat-label>Enter Username</mat-label>
+                                            <input matInput formControlName="email">
+                                            <mat-error></mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </mat-card-content>
+                                <div>
+                                    <mat-card-actions>
+                                        <button mat-raised-button color="primary">Search Tweets</button>
+                                    </mat-card-actions>
+                                </div>
+                                <div class="container">
+                                    <mat-card class="display-card" *ngFor="let tweet of userTweets">
+                                        <p *ngIf="userTweets.length == 0">No Tweet Found for User!</p>
+                                        <mat-card-content>
+                                            <h5>{{tweet.tweetContent}}</h5>
+                                        </mat-card-content>
+                                    </mat-card>
+                                </div>
+                            </mat-card>
+                        </form>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Search User">
+                    <form [formGroup]="searchUserByUsernameForm" (ngSubmit)="onSearchUserByUsername()">
+                        <mat-card class="form-card-1">
+                            <mat-card-header>
+                                <mat-card-title>Search User By Username</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-icon matPrefix>search</mat-icon>
+                                        <mat-label>Enter Username</mat-label>
+                                        <input matInput formControlName="email">
+                                        <mat-error></mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </mat-card-content>
+                            <div>
+                                <mat-card-actions>
+                                    <button mat-raised-button color="primary">Search Users</button>
+                                </mat-card-actions>
+                            </div>
+                            <div class="container">
+                                <mat-card class="display-card" *ngIf="user">
+                                    <mat-card-content>
+                                        <h5>{{user.firstname}} {{user.lastname}}</h5>
+                                        <!-- <mat-card class="display-card" *ngFor="let reply of tweet.reply">
+                                            <mat-card-content>
+                                                <h5>{{reply.replyContent}}</h5>
+                                            </mat-card-content>
+                                        </mat-card> -->
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+                        </mat-card>
+                    </form>
+                </mat-tab>
+                <mat-tab label="User">
+                    <div class="container">
+                        <mat-card class="display-card" *ngFor="let user of users">
+                            <mat-card-content>
+                                <h6> {{user.firstname}} {{user.lastname}} </h6>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+</div>
